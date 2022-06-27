@@ -2,8 +2,10 @@ package com.accountservicesportal.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -36,6 +38,7 @@ public class UserController {
 		User user = new User(myUser.getUserName(), encodededPassword, authorities);
 		jdbcUserDetailsManager.createUser(user);
 		return "User created :)";
+	
 	}
 
 	@GetMapping(value = "/admin")
